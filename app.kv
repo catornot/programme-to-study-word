@@ -1,0 +1,267 @@
+<MainMenu>
+	name: "mainmenu"
+
+	FloatLayout:
+
+		Widget:
+
+			canvas.before:
+            	Rectangle:
+					size: self.size
+					pos: self.pos                   
+
+        RButton:
+            pos_hint:{"x":0.5-0.25,"y":0.5}
+            size_hint: 0.55, 0.2
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "commencer"
+            on_release:
+                root.manager.transition.direction = "up"
+                app.root.current = "qa"
+
+        Label:
+            pos_hint:{"x":0.5-0.25,"y":0}
+            size_hint: 0.55, 0.2
+            text: "par Alex sadovnikov"
+            color: 0,0,0,1
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+<RButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
+
+<RL@Label>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    halign: 'center'
+    valign: 'middle'
+    color: 0 , 0, 0, 1
+    canvas.before:
+        Color:
+            rgba: 0.3, 0.3, 0.3, 0.3
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
+
+<T@TextInput>
+    background_color: (1,1,1,1)
+    background_normal: 'black.png'
+    multiline: False
+    text: ""
+    color: 0, 0, 0, 1
+    
+
+<QAscreen>
+	name: "qa"
+
+    t1: t1
+    text11: "text11"
+    text12: "text12"
+
+    t2: t2
+    text21: "text21"
+    text22: "text22"
+
+    t3: t3
+    text31: "text31"
+    text32: "text32"
+
+    t4: t4
+    text41: "text41"
+    text42: "text42"
+
+    t5: t5
+    text51: "text51"
+    text52: "text52"
+    
+    FloatLayout:
+
+        Widget:
+
+            canvas.before:
+
+                Color:
+                    rgba: 1, 1, 1, 1
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        RL:
+
+            text: root.text12
+            pos_hint: {"x":0.4, "top":1}
+            size_hint: 0.60, 0.18-0.01
+
+        RL:
+
+            text: root.text11
+            pos_hint:{"x":00,"top":1}
+            size_hint: 0.2, 0.18-0.01
+
+        T:
+            id: t1
+
+            pos_hint:{"x":0.2,"top":1}
+            size_hint: 0.2, 0.18-0.01
+            
+        RL:
+
+            text: root.text22
+            pos_hint: {"x":0.4, "top":0.82}
+            size_hint: 0.60, 0.18-0.01
+
+        RL:
+
+            text: root.text21
+            pos_hint:{"x":00,"top":0.82}
+            size_hint: 0.2, 0.18-0.01
+
+        T:
+            id: t2   
+
+            pos_hint:{"x":0.2,"top":0.82}
+            size_hint: 0.2, 0.18-0.01
+
+        RL: 
+
+            text: root.text32
+            pos_hint: {"x":0.4, "top":0.64}
+            size_hint: 0.60, 0.18-0.01
+
+        RL:
+
+            text: root.text31
+            pos_hint:{"x":00,"top":0.64}
+            size_hint: 0.2, 0.18-0.01
+
+        T:
+            id: t3
+
+
+            pos_hint:{"x":0.2,"top":0.64}
+            size_hint: 0.2, 0.18-0.01
+
+
+        RL:
+
+            text: root.text42
+            pos_hint: {"x":0.4, "top":0.46}
+            size_hint: 0.60, 0.18-0.01
+
+        RL:
+
+            text: root.text41
+            pos_hint:{"x":00,"top":0.46}
+            size_hint: 0.2, 0.18-0.01
+
+        T:
+            id: t4
+    
+            pos_hint:{"x":0.2,"top":0.46}
+            size_hint: 0.2, 0.18-0.01
+
+
+        RL:
+
+            text: root.text52
+            pos_hint: {"x":0.4, "top":0.28}
+            size_hint: 0.60, 0.18-0.01
+
+        RL:
+
+            text: root.text51
+            pos_hint:{"x":00,"top":0.28}
+            size_hint: 0.2, 0.18-0.01
+
+        T:
+            id: t5
+    
+            pos_hint:{"x":0.2,"top":0.28}
+            size_hint: 0.2, 0.18-0.01
+
+        RButton:
+            text: "corriger"
+            pos_hint:{"x":0.01,"top":0.10}
+            font_size: (root.width**2 + root.height**2) / 13**4
+            size_hint: 0.98, 0.10
+            on_release:
+                root.manager.transition.direction = "up"
+                root.correction()
+
+<Score>
+    name: "score"
+
+    score1: "0"
+
+    FloatLayout:
+
+        Widget:
+
+            canvas.before:
+
+                Color:
+                    rgba: 1, 1, 1, 1
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        Label:
+            pos_hint:{"x":0.5-0.25,"y":0}
+            size_hint: 0.55, 0.2
+            text: "ferme et ouvre le programme"
+            color: 0,0,0,1
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            pos_hint:{"x":0.5-0.25,"y":0.5}
+            size_hint: 0.55, 0.2
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: root.score1
+            color: 0,0,0,1
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            pos_hint:{"x":0.5-0.25,"y":0.5+0.2}
+            size_hint: 0.55, 0.2
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "tu as eu"
+            color: 0,0,0,1
+            valign: 'bottom'
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+
+            
