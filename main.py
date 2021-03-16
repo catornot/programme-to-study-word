@@ -14,6 +14,7 @@ from kivy.core.window import Window
 from kivy.graphics import (Color,Ellipse,Rectangle,Line)
 
 score=0
+#write your words in this tuple like like in the example 
 words_backup=(
 
 ['Canada' , 'le village' ],
@@ -27,8 +28,6 @@ words_backup=(
 ['Chicoutimi' , 'la fin des eaux profondes' ],
 ['Chibougamau' , 'lieu de rencontre' ],
 ["tu doit savoir comment ecricre les mot lieu",""],
-
-["Territoire autochne","Un espace"]
 
 
 
